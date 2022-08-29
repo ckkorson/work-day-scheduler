@@ -12,9 +12,9 @@ currentDay.text(moment().format('dddd, MMMM Do'))
 function createLines() {
     for (i=0; i<10; i++) {
         scheduleLines.push($('<section>'))
-        timeBlock.push($('<h2>'))
+        timeBlock.push($('<p>'))
         taskBlock.push($('<p>'))
-        saveBlock.push($('<h2>'))
+        saveBlock.push($('<p>'))
         scheduleLines[i].addClass('row')
         timeBlock[i].addClass('col-1 hour time-block')
         taskBlock[i].addClass('col-10 description')
@@ -28,7 +28,7 @@ function formatTask(i,hour) {
     // console.log(hour)
     // console.log(moment().format('hA'))
     // console.log(moment().hour(10).format('hA') < moment().format('hA'))
-    if (hour < moment().format('hA')) {
+    if (i+6 < moment().format('H')) {
         taskBlock[i].addClass('past')
     }
     else if (hour == moment().format('hA')) {
@@ -51,7 +51,7 @@ function createCalendar() {
     }
 }
 
-// console.log(moment(1,'H') < moment(12,'H'))
+console.log(11 < moment(12,'H'))
 // console.log(moment(11,'H').format('H'))
 // console.log(moment(12,'H').format('H'))
 createCalendar()
