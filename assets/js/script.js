@@ -28,7 +28,11 @@ function createLines() {
         saveBlock[i].addClass('col-1 saveBtn')
         // taskBlock[i].text('do stuff')
         saveBlock[i].text('Save')
-        // document.getElementById(taskId).value = localStorage.getItem(taskId)
+        // if (localStorage.getItem(taskId) != null) {
+            // document.getElementById(taskId).textContent = "Hi"
+            taskBlock[i].text(localStorage.getItem(taskId))
+        // }
+        
     }
 }
 
