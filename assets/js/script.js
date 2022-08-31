@@ -12,13 +12,13 @@ currentDay.text(moment().format('dddd, MMMM Do'))
 
 
 function createLines() {
-    for (i=0; i<10; i++) {
+    for (i=0; i<18; i++) {
         scheduleLines.push($('<section>'))
         let taskId = 'task-' + i
         let saveId = 'save-' + i
         timeBlock.push($('<p>'))
         taskBlock.push($('<textarea>'))
-        saveBlock.push($('<p>'))
+        saveBlock.push($('<button>'))
         scheduleLines[i].addClass('row')
         timeBlock[i].addClass('col-1 hour time-block')
         taskBlock[i].addClass('col-10 description')
@@ -54,7 +54,7 @@ function formatTask(i,hour) {
 function createCalendar() {
     createLines()
     let hour 
-    for (i=0; i<10; i++) {
+    for (i=0; i<timeBlock.length; i++) {
         hour = moment().hour(i+6).format('hA')
         timeBlock[i].text(hour)
         formatTask(i,hour)
@@ -69,11 +69,8 @@ createCalendar()
 
 document.querySelectorAll('.saveBtn').forEach(item=> {
     item.addEventListener('click', function() {
-        console.log(this.id)
         let buttonClicked = this.id.replace('save-','')
-        console.log(buttonClicked)
         let taskId = 'task-' + buttonClicked
-        console.log(document.getElementById(taskId).value)
         localStorage.setItem(taskId, document.getElementById(taskId).value)
     })
 })

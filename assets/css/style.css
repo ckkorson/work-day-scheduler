@@ -29,7 +29,7 @@ textarea{
 .time-block{
   text-align: center;
   border-radius: 15px;
-  padding-top: 30px;
+  padding-top: 25px;
   font-size: larger;
   font-weight: bolder;
 }
@@ -37,14 +37,16 @@ textarea{
 .row {
   white-space: pre-wrap;
   height: 80px;
-  border-top: 1px solid white;;
+  border-top: 1px solid white;
+  margin-right: 25px;
+  margin-left: 25px;
 }
 /* format for hour container */
 .hour {
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
-  border-right: 1px dashed #000000;
+  border-left: 1px dashed #000000;
 }
 /* format for past tasks */
 .past {
@@ -63,14 +65,14 @@ textarea{
 }
 /* format for save button container */
 .saveBtn {
-  border-left: 1px solid black;
+  border: 3px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
+  /* box-shadow: 3px 3px gray; */
   background-color: #06AED5;
   color: white;
   height: 100%;
   text-align: center;
-  padding-top: 30px;
   font-size: larger;
   font-weight: bolder;
 }
@@ -79,15 +81,4 @@ textarea{
   font-size: 20px;
   transition: all .3s ease-in-out;
   cursor: grab;
-}
-
-.timeBlock {
-  border-right: 1px dashed #000000;
-}
-
-input {
-  background-color: transparent;
-  height: 100%;
-  width: 100%;
-  border: none;
 }
