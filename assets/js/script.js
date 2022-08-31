@@ -1,4 +1,6 @@
 let schedule = $('#schedule')
+// let saveBtn = document.querySelector('.saveBtn')
+// let btn1 = document.querySelector('#save-1')
 let scheduleLines = []
 let timeBlock = []
 let taskBlock = []
@@ -26,6 +28,7 @@ function createLines() {
         saveBlock[i].addClass('col-1 saveBtn')
         // taskBlock[i].text('do stuff')
         saveBlock[i].text('Save')
+        // document.getElementById(taskId).value = localStorage.getItem(taskId)
     }
 }
 
@@ -56,7 +59,17 @@ function createCalendar() {
     }
 }
 
-console.log(11 < moment(12,'H'))
-// console.log(moment(11,'H').format('H'))
-// console.log(moment(12,'H').format('H'))
+
 createCalendar()
+
+
+document.querySelectorAll('.saveBtn').forEach(item=> {
+    item.addEventListener('click', function() {
+        console.log(this.id)
+        let buttonClicked = this.id.replace('save-','')
+        console.log(buttonClicked)
+        let taskId = 'task-' + buttonClicked
+        console.log(document.getElementById(taskId).value)
+        localStorage.setItem(taskId, document.getElementById(taskId).value)
+    })
+})
