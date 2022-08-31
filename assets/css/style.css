@@ -11,6 +11,7 @@ textarea{
   color: #000000;
   border-left: 1px solid black;
   padding: 10px;
+  height: 100%;
 }
 
 .jumbotron {
@@ -28,6 +29,9 @@ textarea{
 .time-block{
   text-align: center;
   border-radius: 15px;
+  padding-top: 30px;
+  font-size: larger;
+  font-weight: bolder;
 }
 /* format for row */
 .row {
@@ -64,12 +68,17 @@ textarea{
   border-bottom-right-radius: 15px;
   background-color: #06AED5;
   color: white;
-  
+  height: 100%;
+  text-align: center;
+  padding-top: 30px;
+  font-size: larger;
+  font-weight: bolder;
 }
 /* hover styling for save button */
 .saveBtn:hover {
   font-size: 20px;
   transition: all .3s ease-in-out;
+  cursor: grab;
 }
 
 .timeBlock {
