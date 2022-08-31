@@ -12,12 +12,17 @@ currentDay.text(moment().format('dddd, MMMM Do'))
 function createLines() {
     for (i=0; i<10; i++) {
         scheduleLines.push($('<section>'))
+        let taskId = 'task-' + i
+        let saveId = 'save-' + i
         timeBlock.push($('<p>'))
-        taskBlock.push($('<p>'))
+        taskBlock.push($('<textarea>'))
         saveBlock.push($('<p>'))
         scheduleLines[i].addClass('row')
         timeBlock[i].addClass('col-1 hour time-block')
         taskBlock[i].addClass('col-10 description')
+        taskBlock[i].attr('id',taskId)
+        saveBlock[i].attr('id',saveId)
+        // taskBlock[i].append($("<input/>", {type: 'text'}))
         saveBlock[i].addClass('col-1 saveBtn')
         // taskBlock[i].text('do stuff')
         saveBlock[i].text('Save')
