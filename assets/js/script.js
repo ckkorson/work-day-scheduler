@@ -1,14 +1,15 @@
+// set a variable equal to the id of the div that the calendar will be appended to
 let schedule = $('#schedule')
+// create arrays for the rows and the individual elements in the row
 let scheduleLines = []
 let timeBlock = []
 let taskBlock = []
 let saveBlock = []
-
+// set a variable equal to the id currentDay in the header
 let currentDay = $('#currentDay')
+// set the text in current day equal to today
 currentDay.text(moment().format('dddd, MMMM Do'))
-
-
-
+// function to create arrays of the calendar elements and add text and formatting too them
 function createLines() {
     for (i=0; i<11; i++) {
         scheduleLines.push($('<section>'))
@@ -27,7 +28,7 @@ function createLines() {
         taskBlock[i].text(localStorage.getItem(taskId))
     }
 }
-
+// function to select textarea class based on time of day
 function formatTask(i,hour) {
     if (i+6 < moment().format('H')) {
         taskBlock[i].addClass('past')
@@ -39,7 +40,7 @@ function formatTask(i,hour) {
         taskBlock[i].addClass('future')
     }
 }
-
+// function to append all the element to the schedule div
 function createCalendar() {
     createLines()
     let hour 
@@ -51,13 +52,13 @@ function createCalendar() {
         schedule.append(scheduleLines[i])
     }
 }
-
+// run the function to create the calendar lines
 createCalendar()
-
+// add unique event listeners to all savebuttons and save the text in local storage
 document.querySelectorAll('.saveBtn').forEach(item=> {
     item.addEventListener('click', function() {
-        let buttonClicked = this.id.replace('save-','')
-        let taskId = 'task-' + buttonClicked
+        let taskId = this.id.replace('save-','task-')
+        // let taskId = 'task-' + buttonClicked
         localStorage.setItem(taskId, document.getElementById(taskId).value)
     })
 })
