@@ -58,7 +58,6 @@ createCalendar()
 document.querySelectorAll('.saveBtn').forEach(item=> {
     item.addEventListener('click', function() {
         let taskId = this.id.replace('save-','task-')
-        // let taskId = 'task-' + buttonClicked
         localStorage.setItem(taskId, document.getElementById(taskId).value)
     })
 })
